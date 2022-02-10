@@ -111,4 +111,8 @@ app.post("/notify-payment", (req, res) => {
   });
 });
 
+app.get("*", function (req, res) {
+  res.render("error");
+});
+
 app.listen(port);
