@@ -4,7 +4,9 @@ const mercadopago = require("mercadopago");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
 const bodyParser = require("body-parser");
+
 var port = process.env.PORT || 3000;
+const baseUrl = process.env.BASE_URL;
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,8 +44,6 @@ app.get("/success", function (req, res) {
 });
 
 app.post("/create-preference", (req, res) => {
-  console.log(req.body);
-
   let preference = {
     items: [
       {
@@ -63,9 +63,9 @@ app.post("/create-preference", (req, res) => {
       },
     ],
     back_urls: {
-      success: "http://localhost:3000/success",
-      failure: "http://localhost:3000/failure",
-      pending: "http://localhost:3000/pending",
+      success: `${baseUrl}success`,
+      failure: `${baseUrl}failure`,
+      pending: `${baseUrl}pending`,
     },
     auto_return: "approved",
     payment_methods: {
@@ -79,12 +79,6 @@ app.post("/create-preference", (req, res) => {
   mercadopago.preferences
     .create(preference)
     .then(function (response) {
-      // console.log(response.body.init_point);
-
-      // res.json({
-      //   response
-      // });
-
       res.redirect(response.body.init_point);
     })
     .catch(function (error) {
