@@ -12,6 +12,7 @@ const baseUrl = process.env.BASE_URL;
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 if (!mercadoPagoAccessToken) {
   console.log("Error: access token not defined");
@@ -102,15 +103,11 @@ app.post("/create-preference", (req, res) => {
 });
 
 app.post("/notify-payment", (req, res) => {
-  console.log(req);
-  console.log(res);
-
   const { body } = req;
-  // const { id, data, action, user_id, application_id } = body;
-  console.log(body);
 
   res.status(200).json({
     status: "OK",
+    body,
   });
 });
 
