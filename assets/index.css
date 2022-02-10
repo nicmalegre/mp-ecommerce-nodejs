@@ -1,0 +1,87 @@
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.container-state {
+  margin: 24px 0px;
+  border-radius: 8px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 4px 0px;
+  padding: 14px 8px;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  background-color: #f1f1f1;
+}
+
+.container-state-success {
+  color: white;
+  background-color: #26b36a;
+}
+
+.container-state-pending {
+  color: white;
+  background-color: #ed6c02;
+}
+
+.container-state-error {
+  color: white;
+  background-color: #f23d4f;
+}
+
+.container-section {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0px auto;
+  position: relative;
+  max-width: 600px;
+}
+
+.card {
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+  /* width: 600px; */
+  flex-direction: column;
+}
+
+.card h6 {
+  font-size: 16px;
+}
+
+.container-button {
+  color: #0288d1;
+  text-align: center;
+  margin: 24px 0px;
+
+  /* margin: 24px auto;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 6px 10px;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  background-color: #0288d1;
+  color: white;
+  width: 100%;
+  max-width: 140px; */
+}
