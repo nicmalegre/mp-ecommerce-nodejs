@@ -105,6 +105,9 @@ app.post("/create-preference", (req, res) => {
 app.post("/notify-payment", (req, res) => {
   const { body } = req;
 
+  console.log("BODY");
+  console.log(body);
+
   res.status(200).json({
     status: "OK",
     body,
