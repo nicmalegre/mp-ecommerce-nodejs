@@ -82,7 +82,7 @@ app.post("/create-preference", (req, res) => {
       failure: `${baseUrl}failure`,
       pending: `${baseUrl}pending`,
     },
-    external_reference: "nikoalegre@hotmail.com",
+    external_reference: "nicolasalegremz@gmail.com",
     auto_return: "approved",
     payment_methods: {
       installments: 6,
