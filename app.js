@@ -60,7 +60,7 @@ app.post("/create-preference", (req, res) => {
         description: "Dispositivo móvil de Tienda e-commerce",
         picture_url: req.body.img,
         quantity: 1,
-        unit_price: Number(req.body.price),
+        unit_price: parseFloat(req.body.price),
       },
     ],
     payer: {
@@ -82,7 +82,7 @@ app.post("/create-preference", (req, res) => {
       failure: `${baseUrl}failure`,
       pending: `${baseUrl}pending`,
     },
-    external_reference: "nicolasalegremz@gmail.com",
+    external_reference: "nikoalegre@hotmail.com",
     auto_return: "approved",
     payment_methods: {
       installments: 6,
